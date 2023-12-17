@@ -71,7 +71,7 @@ Ce projet est une application web Node.js utilisant Express et MongoDB. Elle per
 ## Structure du Projet
 
 ```
-projet/
+DevoirMongoDB/
 │
 ├── app/
 │   ├── controllers/    - Logique de contrôle pour les routes.
