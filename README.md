@@ -76,11 +76,10 @@ DevoirMongoDB/
 ├── app/
 │   ├── controllers/    - Logique de contrôle pour les routes.
 │   ├── models/         - Modèles Mongoose pour MongoDB.
-│   ├── routes/         - Définition des routes Express.
-│   └── views/          - Fichiers EJS pour l'interface utilisateur.
-│
+│   └── routes/         - Définition des routes Express.
+│  
 ├── public/             - Fichiers statiques (CSS, JS, images).
-├── views/              - Fichiers EJS pour les vues principales.
+├── views/              - Fichiers EJS pour l'interface utilisateur.
 ├── .env                - Fichier de configuration des variables d'environnement.
 ├── server.js           - Point d'entrée principal de l'application.
 └── package.json        - Métadonnées et dépendances du projet.
