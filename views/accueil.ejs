@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 150%; /* Augmentez la largeur maximale pour tenir compte du bouton supplémentaire */
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        nav ul {
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 5px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            background-color: #5cb85c;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #4cae4c;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: auto;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur notre site de recettes !</h1>
+        <nav>
+            <ul>
+                <% if (!user) { %>
+                    <li><a href="/utilisateurs/inscription">Inscription</a></li>
+                    <li><a href="/utilisateurs/connexion">Connexion</a></li>
+                <% } else { %>
+                    <li><a href="/recettes">Voir les recettes</a></li>
+                    <li><a href="/recettes/ajouter">Ajouter une recette</a></li>
+                    <li><a href="/ingredients">Gestion des ingrédients</a></li>
+                    <li><a href="/utilisateurs/deconnexion">Se déconnecter</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </div>
+        
+    <footer>
+        <p>&copy; 2023 Site de recettes. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

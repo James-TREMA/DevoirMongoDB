@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="email"],
+        input[type="password"] {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #337ab7;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .alert-danger {
+            background-color: #f8d7da; /* Couleur de fond rose clair */
+            border-color: #f5c2c7; /* Couleur de la bordure rose plus foncé */
+            color: #842029; /* Couleur du texte */
+            padding: .75rem 1.25rem; /* Espace intérieur */
+            margin-bottom: 1rem; /* Espace en dessous de l'alerte */
+            border: 1px solid transparent; /* Bordure transparente */
+            border-radius: .25rem; /* Coins arrondis */
+            position: absolute; /* Positionnement absolu pour le positionner précisément */
+            top: 20px; /* Position depuis le haut */
+            right: 20px; /* Position depuis la droite */
+            width: 250px; /* Largeur fixe */
+            box-shadow: 0px 0px 3px #f5c2c7; /* Ombre portée pour donner l'effet "flottant" */
+            z-index: 1000; /* S'assurer qu'elle apparaisse au-dessus des autres éléments */
+            display: block; /* Ajouté pour s'assurer que la div est bien affichée */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Connexion</h1>
+    
+        <!-- Affichage des messages flash pour les erreurs -->
+        <% if (messages.error && messages.error.length > 0) { %>
+            <div class="alert-danger" id="error-alert" style="display: block;">
+                <%= messages.error %>
+            </div>
+            <script>
+                setTimeout(function() {
+                    document.getElementById('error-alert').style.display = 'none';
+                }, 5000);
+            </script>
+        <% } %>
+    
+        <form action="/utilisateurs/connexion" method="post">
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required><br>
+    
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required><br>
+    
+            <button type="submit">Se connecter</button>
+        </form>
+        <a href="/utilisateurs/inscription">Pas de compte ? Inscrivez-vous</a>
+    </div>
+</body>
+</html>
+
+
+<!-- 'andredu29@live.fr', password: '0123456789' -->

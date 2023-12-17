@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Recettes</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+    
+        h1 {
+            color: #5cb85c; /* Changez la couleur du titre en vert */
+            margin: 40px 0; /* Augmentez l'espacement autour du titre */
+            text-transform: uppercase; /* Optionnel: style de titre en majuscules */
+        }
+    
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%; /* Utilisez 100% de la largeur de l'écran pour centrer */
+            max-width: 800px; /* Ajustez selon la largeur maximale désirée */
+            display: flex; /* Utilisez flexbox pour centrer les éléments */
+            flex-direction: column; /* Les éléments s'alignent verticalement */
+            align-items: center; /* Centre horizontalement dans le conteneur flex */
+        }
+    
+        li {
+            background-color: #fff;
+            margin-bottom: 25px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            width: 80%; /* Ajustez la largeur de chaque élément de liste */
+        }
+    
+        img {
+            max-width: 100%; /* Images responsives */
+            height: auto;
+            border-radius: 8px; /* Ajoutez un bord arrondi aux images */
+            margin-bottom: 20px;
+        }
+    
+        h2 {
+            color: #5cb85c; /* Titre de la recette en vert */
+            margin-bottom: 10px; /* Espacement après le titre de la recette */
+        }
+    
+        p {
+            font-size: 1.1em; /* Taille de police légèrement plus grande pour la lisibilité */
+            line-height: 1.6; /* Espacement des lignes pour une meilleure lecture */
+            color: #666; /* Couleur de police plus douce pour les descriptions */
+        }
+    
+        p strong { /* Ajoutez des balises <strong> autour de "Description" et "Temps de préparation" dans votre HTML */
+            color: #333; /* Couleur de police plus foncée pour les en-têtes de paragraphe */
+            font-weight: bold;
+        }
+    
+        form {
+            margin-top: 15px;
+        }
+    
+        button {
+            padding: 10px 20px;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1em; /* Taille de police standard pour le bouton */
+        }
+    
+        button:hover {
+            background-color: #c9302c;
+        }
+    
+        footer {
+            position: relative; /* Modifiez cette ligne en position: relative; */
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            width: 100%;
+        }
+    
+        footer p {
+            margin: 0;
+        }
+    </style>    
+</head>
+<body>
+    <h1>Liste des Recettes</h1>
+    <ul>
+        <% recettes.forEach(function(recette) { %>
+            <li>
+                <% if (recette._id) { %>
+                    <img src="/uploads/<%= recette._id %>.jpg" alt="Image de <%= recette.titre %>">
+                <% } else { %>
+                    <p>Pas d'image disponible</p>
+                <% } %>
+                <h2><%= recette.titre %></h2>
+                <p>Description : <%= recette.description %></p>
+                <p>Temps de préparation : <%= recette.tempsPreparation %> minutes</p>
+                <form action="/recettes/<%= recette._id %>?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit">Supprimer la recette</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+    <footer>
+        <p>&copy; 2023 Site de recettes. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

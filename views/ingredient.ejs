@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Ingrédients</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+    
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+        h1 {
+            color: #5cb85c;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    
+        .ingredient {
+            background-color: #f9f9f9;
+            border-left: 5px solid #5cb85c;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+    
+        .ingredient-header {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #5cb85c;
+        }
+    
+        .ingredient-description, .ingredient-quantite {
+            font-size: 1em;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+    
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    
+        footer p {
+            margin: 0;
+        }
+    </style>    
+</head>
+<body>
+    <div class="container">
+        <h1>Liste des Ingrédients</h1>
+        <% ingredients.forEach(function(ingredient) { %>
+            <div class="ingredient">
+                <div class="ingredient-header"><%= ingredient.nom %></div>
+                <div class="ingredient-description">Description: <%= ingredient.description || 'Non spécifiée' %></div>
+                <div class="ingredient-quantite">Quantité: <%= ingredient.quantite || 'Non spécifiée' %></div>
+            </div>
+        <% }); %>    
+    </div>
+    <footer>
+        <p>&copy; 2023 Site de recettes. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
