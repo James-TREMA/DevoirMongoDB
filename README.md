@@ -108,3 +108,6 @@ Les contributions à ce projet sont les bienvenues. Pour contribuer :
 ## Licence
 
 Open Source no licence.
+
+## Image
+![Page accueil](https://image.noelshack.com/fichiers/2023/50/7/1702837398-page-accuiel.png)
