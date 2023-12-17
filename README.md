@@ -30,7 +30,37 @@ Ce projet est une application web Node.js utilisant Express et MongoDB. Elle per
     SESSION_SECRET=votre_secret_de_session
     PORT=3000
     ```
-4. Démarrez le serveur :
+4. Console MongoDB :
+    ```
+    -- Select db
+    use db_base
+    -- Ajout des collection
+    db.createCollection("commentaires")
+    db.createCollection("recettes")
+    db.createCollection("ingredients")
+    db.createCollection("categories")
+    db.createCollection("users")
+    -- exemple pour ajouter dans la collection "commentaires"
+    db.commentaires.insert({
+        texte: "Vraiment délicieux, j'ai adoré cette recette !",
+        auteur: ObjectId("identifiant_de_l_auteur"),
+        recette: ObjectId("identifiant_de_la_recette"),
+        datePoste: new Date("2023-12-14T00:00:00Z")
+    })
+    -- exemple pour ajouter dans la collection "ingredients"
+    db.ingredients.insert({
+        nom: "Carotte",
+        description: "Racine orange croquante, populaire dans la cuisine mondiale.",
+        quantite: "500 g"
+    })
+    -- exemple pour ajouter dans la collection "categories" 
+    db.categories.insert({
+        nom: "Soupes",
+        description: "Des soupes réconfortantes pour tous les goûts."
+    })
+
+    ```
+5. Démarrez le serveur :
     ```
     node server.js
     ```
