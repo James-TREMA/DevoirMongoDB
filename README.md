@@ -118,5 +118,11 @@ Open Source no licence.
 ## Page connexion
 ![Page connexion](https://image.noelshack.com/fichiers/2023/50/7/1702837718-connexion.png)
 
-## Page Recettes
-![Page connexion](https://gyazo.com/0e58414e8b150824240a2e592d515ade)
+## Page recettes
+![Page connexion](https://image.noelshack.com/fichiers/2023/50/7/1702838154-liste-des-recettes.png)
+
+## Page ajouté une recette
+![Page connexion](https://image.noelshack.com/fichiers/2023/50/7/1702838218-ajouter-une-recette.png)
+
+## Page liste des ingrédients
+![Page connexion](https://image.noelshack.com/fichiers/2023/50/7/1702838348-liste-des-ingredients.png)
