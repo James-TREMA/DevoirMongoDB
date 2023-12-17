@@ -74,15 +74,20 @@ Ce projet est une application web Node.js utilisant Express et MongoDB. Elle per
 DevoirMongoDB/
 │
 ├── app/
-│   ├── controllers/    - Logique de contrôle pour les routes.
-│   ├── models/         - Modèles Mongoose pour MongoDB.
-│   └── routes/         - Définition des routes Express.
-│  
-├── public/             - Fichiers statiques (CSS, JS, images).
-├── views/              - Fichiers EJS pour l'interface utilisateur.
-├── .env                - Fichier de configuration des variables d'environnement.
-├── server.js           - Point d'entrée principal de l'application.
-└── package.json        - Métadonnées et dépendances du projet.
+│   ├── controllers/    - Contient les fichiers de logique de contrôle pour les routes.
+│   ├── middleware/     - Contient les fichiers de middleware pour les opérations comme l'authentification.
+│   ├── models/         - Contient les modèles Mongoose pour l'interaction avec MongoDB.
+│   ├── public/         - Contient les fichiers statiques accessibles publiquement.
+│   │   └── uploads/    - Dossier pour stocker les fichiers téléchargés par les utilisateurs.
+│   └── routes/         - Contient les fichiers de définition des routes Express.
+│
+├── views/              - Contient les fichiers EJS pour l'interface utilisateur.
+│
+├── .gitignore          - Spécifie les fichiers intentionnellement non suivis à ignorer par Git.
+├── package-lock.json   - Verrouille automatiquement les versions de toutes les dépendances.
+├── package.json        - Détaille les métadonnées et les dépendances du projet.
+├── README.md           - Fournit des informations sur le projet, l'utilisation, et plus.
+└── server.js           - Le point d'entrée principal de l'application Express.
 ```
 
 ## Technologies Utilisées
